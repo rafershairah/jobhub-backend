@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Job;
-use Illuminate\Http\Response;
+use Illuminate\Http\Request;
+
+class JobController extends Controller
+{
+    public function index (){
+        return Job:: all();
+    }
+}

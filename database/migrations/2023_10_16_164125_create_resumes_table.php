@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string("Skills");
             $table->string("Work Experience");
-            $table->string("Eduaction");
+            $table->string("Education");
             $table->string("Contact Info");
             $table->timestamps();
         });

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Resume extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'Skills',
+        'Work Experience',
+        'Education',
+        'Contact Info'
+    ];
 }

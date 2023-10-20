@@ -13,18 +13,35 @@ class JobFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         $faker = Faker::create();
-        
-        $job_titles=['Web Developer','Software Eng', 'UX/UI Designer', 'FullStack Developer', 'Backend Developer','Frontend Developer'
-        
-        ]
+        $job_titles = ['Web Developer', 
+        'Software Engineer', 
+        'UX/UI Designer', 
+        'FullStack Developer', 
+        'Backend Developer', 
+        'Frontend Developer',
+        'DevOps Engineer',
+        'Mobile App Developer',
+        'QA Automation Engineer',
+        'Social Media Manager',
+        'Software Developer',
+        'Network Administrator',
+        'Data Analyst',
+        'Systems Administrator',
+        'Database Administrator',
+        'Email Marketing Specialist',
+        'Cybersecurity Analyst',
+        'IT Support Specialist',
+        'Content Marketing Specialist', 
+        'Cloud Solutions Architect'
+    ];
 
         return [
-            'title' => $faker->randomElement($job_titles),
-            'description' => 'Manually Entered Description',
-            'company_id' => $faker->randomElement(Company::pluck('id'))
+            'title' => fake()->randomElement($job_titles),
+            'description'=> fake()->paragraph(),
+            'company_id' => fake()->randomElement(Company::pluck('id'))
         ];
     }
 }
