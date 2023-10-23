@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('featured', function (Blueprint $table) {
+        Schema::create('featured_to', function (Blueprint $table) {
             $table->id();
-            $table->boolean('featured')->default(false);
+            $table->boolean('featured_to')->default(false);
             $table->timestamps();
         });
     }

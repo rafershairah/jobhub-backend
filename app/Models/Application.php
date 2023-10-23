@@ -15,7 +15,7 @@ class Application extends Model
         'job_id',
     ];
 
-    public function application(): HasMany{
+    public function applications(): HasMany{
         return $this ->hasMany(Application::class);
     }
 

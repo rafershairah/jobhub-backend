@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posted_at', function (Blueprint $table) {
+        Schema::create('post_job', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('posted_at');
+            $table->dateTime('post_job');
             $table->timestamps();
         });
     }

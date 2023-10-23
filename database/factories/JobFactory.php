@@ -34,21 +34,22 @@ class JobFactory extends Factory
         'Content Marketing Specialist',
         'Cloud Solutions Architect',
     ];
-
+    
     public function definition()
     {
-        $companies = Company::pluck('id')->toArray();
-        $isFeatured = $this->faker->boolean(20);
-
-
+        
+        $featured = $this->faker->boolean(20);
+        $title = $this->faker->randomElement($this->jobTitles);
+        $company = Company::inRandomOrder()->first();
+       
         return [
-            'title' => $this->faker->randomElement($this->jobTitles),
+            'title' => $title,
             'description' => $this->faker->paragraph,
-            'company_id' => $this->faker->randomElement($companies),
+            'company_id' => Company::factory()->create()->id,
             'job_types' => $this->faker->randomElement(['part_time', 'full_time']),
-            'posted_at' => $this->faker->dateTimeThisMonth,
+            'post_job' => $this->faker->dateTimeThisMonth->format('Y-m-d H:i:s'),
             'income' => $this->faker->numberBetween(10000, 100000),
-            'featured' => $isFeatured ? 'Featured' : null,
+            'featured' => $this->faker->randomElement(['featured', 'not_featured']),
         ];
     }
 }

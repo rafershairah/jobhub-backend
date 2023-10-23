@@ -35,6 +35,8 @@ class JobController extends Controller
             'job_type' => 'required|in:part_time,full_time',
             'posted_at' => 'required|date',
             'salary' => 'required|numeric',
+            'featured' => 'required|in:featured,not_featured'
+
         ]);
 
         $job = Job::create($request->all());

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string("City");
-            $table->string("State/Province");
-            $table->string("Country");
-            $table->integer("Zip Code");
+            $table->string('City')->default('');
+            $table->string('State/Province')->nullable();
+            $table->string('Country')->default('Unknown');
+            $table->integer('Zip Code')->default(0);
             $table->timestamps();
         });
     }

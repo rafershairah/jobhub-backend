@@ -19,10 +19,17 @@ class ApplicationFactory extends Factory
      */
     public function definition(): array
     {
-        $faker = Faker::create();
+        $user = User::inRandomOrder()->first();
+        $job = Job::inRandomOrder()->first();
+
+        if (!$user || !$job) {
+            $user = User::factory()->create();
+            $job = Job::factory()->create();
+        }
+
         return [
-            'user_id' => $this->faker->randomElement(User::pluck('id')),
-            'job_id' => $this->faker->randomElement(Job::pluck('id')),
+            'user_id' => $user->id,
+            'job_id' => $job->id,
         ];
     }
 }

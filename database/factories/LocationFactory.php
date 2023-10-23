@@ -64,10 +64,10 @@ class LocationFactory extends Factory
         ];
 
         return [
-            'Country' => $faker->country(),
-            'City' => $faker->city(),
+            'Country' => $this->faker->country(),
+            'City' => $faker->city,
             'State/province' => $faker->randomElement($state),
-            'Zip Code' => $faker->randomElement($zip_code),
+            'Zip Code' => $this->faker->randomElement($zip_code),
         ];
     }
 }

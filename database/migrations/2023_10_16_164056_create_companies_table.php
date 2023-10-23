@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->string("Company Name");
-            $table->string("Description");
-            $table->string("Industry");
+            $table->unsignedBigInteger("company_id");
+            $table->string("description");
+            $table->string("industry");
             $table->unsignedBigInteger("location_id");
-            $table->foreign("location_id")->references("id")->on("locations");
+            $table->foreign("company_id")->references("id")->on("companies");
             $table->timestamps();
         });
     }
