@@ -24,4 +24,9 @@ class Job extends Model
     {
         return $this->belongsTo(Company::class);
     }
+    public function index()
+{
+    return "Hello from JobController@index";
+}
+
 }

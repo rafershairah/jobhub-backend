@@ -61,10 +61,10 @@ class CompanyFactory extends Factory
         'Healthcare - Physical Therapy'];
 
         return [
-            'Company Name' => fake() ->randomElement($company_names),
-            'Description'=> fake()->text(100),
-            'Industry'=>fake()->randomElement($industry_names),
-            'location_id' => fake()->randomElement(Location::pluck('id'))
+            'Company Name' => $this->faker->randomElement($company_names),
+            'Description' => $this->faker->text(100),
+            'Industry' => $this->faker->randomElement($industry_names),
+            'location_id' => Location::inRandomOrder()->firstOrCreate()->id,
         ];
     }
 }

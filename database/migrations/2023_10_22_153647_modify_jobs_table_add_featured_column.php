@@ -11,7 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('featured', function (Blueprint $table) {
+            $table->id();
+            $table->boolean('featured')->default(false);
+            $table->timestamps();
+        });
     }
 
     /**

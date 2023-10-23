@@ -38,7 +38,8 @@ class LocationFactory extends Factory
             'Kentucky', 
             'Louisiana',
             'Maine',
-            'Maryland'];
+            'Maryland',
+        ];
         $zip_code = [
             '90210', 
             '10001', 
@@ -59,13 +60,14 @@ class LocationFactory extends Factory
             '20037', 
             '90232', 
             '90265', 
-            '10005'];
+            '10005',
+        ];
 
         return [
-            'Country' =>fake()->country(),
-            'City'=> fake()->city(),
-            'State/province'=>fake()->randomElement($state),
-            'Zip Code'=>fake()-> randomElement($zip_code)
+            'Country' => $faker->country(),
+            'City' => $faker->city(),
+            'State/province' => $faker->randomElement($state),
+            'Zip Code' => $faker->randomElement($zip_code),
         ];
     }
 }

@@ -17,7 +17,7 @@ class ResumeFactory extends Factory
      */
     public function definition(): array
     {
-        $faker = Faker::create();
+      
         $skills = ['Proficient in programming languages like Python and Java',
         'Experienced in network administration and troubleshooting',
         'Skilled in database management with SQL',
@@ -85,12 +85,13 @@ class ResumeFactory extends Factory
             "Master's degree in Cybersecurity"
         ];
 
+       
         return [
-            'user_id' => fake()->randomElement(User::pluck('id')),
-            'Skills' => fake()->randomElement($skills),
-            'Work Experience'=> fake()->randomElement($work_experience),
-            'Eduaction'=>fake()->randomElement($education),
-            'Contact Info'=>fake()->unique()->safeEmail(),
+            'user_id' => auth()->id(), 
+            'Skills' => $this->faker->randomElement($skills),
+            'Work Experience' => $this->faker->randomElement($work_experience),
+            'Education' => $this->faker->randomElement($education),
+            'Contact Info' => $this->faker->unique()->safeEmail(),
         ];
-    }
+}
 }

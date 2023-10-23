@@ -21,8 +21,8 @@ class ApplicationFactory extends Factory
     {
         $faker = Faker::create();
         return [
-           'user_id' =>fake()->randomElement(User::pluck('id')),
-           'job_id' => fake()->randomElement(Job::pluck('id')),
+            'user_id' => $this->faker->randomElement(User::pluck('id')),
+            'job_id' => $this->faker->randomElement(Job::pluck('id')),
         ];
     }
 }
