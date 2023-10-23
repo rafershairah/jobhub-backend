@@ -11,9 +11,14 @@ class Job extends Model
 {
         use HasFactory;
         protected $fillable = [
-        'title',
-        'description',
-        'company_id'
+            'title', 
+            'description', 
+            'company_id', 
+            'job_types',
+            'income', 
+            'job_featured',
+            'job_date',  
+
     ];
 
     public function application(): HasMany{

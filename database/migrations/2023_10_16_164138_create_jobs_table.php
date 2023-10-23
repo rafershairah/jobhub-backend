@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger("company_id");
             $table->string("title");
-            $table->string("description");
+            $table->string("description", 1000);
             $table->foreign("company_id")->references("id")->on("companies");
             $table->enum('job_types', ['part_time', 'full_time']);
-            $table->dateTime('post_job');
+            $table->dateTime('job_date');
             $table->integer('income');
-            $table->enum('featured', ['featured', 'not_featured'])->default('not_featured');
+            $table->enum('job_featured', [1, 0])->default(0); 
             $table->timestamps();
         });
     }

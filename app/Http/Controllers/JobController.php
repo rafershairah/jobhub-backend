@@ -32,10 +32,10 @@ class JobController extends Controller
             'title' => 'required|string',
             'description' => 'required|string',
             'company_id' => 'required|exists:companies,id',
-            'job_type' => 'required|in:part_time,full_time',
-            'posted_at' => 'required|date',
+            'job_types' => 'required|in:part_time,full_time',
+            'job_date' => 'required|date',
             'salary' => 'required|numeric',
-            'featured' => 'required|in:featured,not_featured'
+            'job_featured' => 'required|in:featured,not_featured'
 
         ]);
 

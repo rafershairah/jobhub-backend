@@ -47,9 +47,8 @@ class JobFactory extends Factory
             'description' => $this->faker->paragraph,
             'company_id' => Company::factory()->create()->id,
             'job_types' => $this->faker->randomElement(['part_time', 'full_time']),
-            'post_job' => $this->faker->dateTimeThisMonth->format('Y-m-d H:i:s'),
+            'job_date' => $this->faker->dateTimeThisMonth->format('Y-m-d H:i:s'),
             'income' => $this->faker->numberBetween(10000, 100000),
-            'featured' => $this->faker->randomElement(['featured', 'not_featured']),
-        ];
+            'job_featured' => $this->faker->randomElement([1, 0]),];
     }
 }
