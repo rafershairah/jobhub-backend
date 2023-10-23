@@ -22,9 +22,12 @@ class JobController extends Controller
 
     public function create()
     {
-        $companies = Company::all();
-        return response()->json(['companies' => $companies], 200);
+        $jobs = Job::with(['company'])->get(); 
+        return response()->json(['jobs' => $jobs], 200);
     }
+    
+
+    
 
     public function store(Request $request)
     {
@@ -35,7 +38,7 @@ class JobController extends Controller
             'job_types' => 'required|in:part_time,full_time',
             'job_date' => 'required|date',
             'salary' => 'required|numeric',
-            'job_featured' => 'required|in:featured,not_featured'
+            'job_featured' => 'required|boolean',
 
         ]);
 

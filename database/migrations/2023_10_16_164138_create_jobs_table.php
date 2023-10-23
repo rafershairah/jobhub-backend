@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('job_types', ['part_time', 'full_time']);
             $table->dateTime('job_date');
             $table->integer('income');
-            $table->enum('job_featured', [1, 0])->default(0); 
+            $table->boolean('job_featured');
             $table->timestamps();
         });
     }

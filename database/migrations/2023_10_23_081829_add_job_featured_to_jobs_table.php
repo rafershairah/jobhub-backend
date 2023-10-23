@@ -13,7 +13,7 @@ class AddJobFeaturedToJobsTable extends Migration
     {
         Schema::table('jobs', function (Blueprint $table) {
             if (!Schema::hasColumn('jobs', 'job_featured')) {
-                $table->boolean('job_featured')->default(false);
+                $table->boolean('job_featured');
             }
         });
     }

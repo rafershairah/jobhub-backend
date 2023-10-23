@@ -44,11 +44,13 @@ class JobFactory extends Factory
        
         return [
             'title' => $title,
+            'id' => $title,
             'description' => $this->faker->paragraph,
             'company_id' => Company::factory()->create()->id,
             'job_types' => $this->faker->randomElement(['part_time', 'full_time']),
             'job_date' => $this->faker->dateTimeThisMonth->format('Y-m-d H:i:s'),
             'income' => $this->faker->numberBetween(10000, 100000),
-            'job_featured' => $this->faker->randomElement([1, 0]),];
+            'job_featured' => $this->faker->boolean(20),
+];
     }
 }
