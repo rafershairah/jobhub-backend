@@ -11,7 +11,7 @@ class FormController extends Controller
         return ('uploadform');
     }
 
-    public function applyform(Request $request)
+    public function apply(Request $request)
     {
         $request->validate([
             'Full Name' => 'required|string',
