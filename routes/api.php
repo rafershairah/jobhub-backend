@@ -15,5 +15,4 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
 Route::get('/jobs', [JobController::class, 'index']);
 Route::get('/jobs/create', [JobController::class, 'create']);
 Route::post('/jobs', [JobController::class, 'store']);
-
 Route::post('/form', [JobApplicationController::class, 'form']);

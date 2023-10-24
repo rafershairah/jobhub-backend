@@ -44,7 +44,6 @@ class JobFactory extends Factory
        
         return [
             'title' => $title,
-            'id' => $title,
             'description' => $this->faker->paragraph,
             'company_id' => Company::factory()->create()->id,
             'job_types' => $this->faker->randomElement(['part_time', 'full_time']),
