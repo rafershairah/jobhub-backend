@@ -34,4 +34,9 @@ class Job extends Model
     return "Hello from JobController@index";
 }
 
+    public function apply(): HasMany{
+        return $this ->hasMany(ApplyForm::class);
+    }
+
+
 }

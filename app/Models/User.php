@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\ApplyForm;
 
 class User extends Authenticatable
 {
@@ -57,4 +58,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Application::class);
     }
+
+    public function apply(): HasMany
+    {
+        return $this->hasMany(ApplyForm::class);
+    }
 }
+
