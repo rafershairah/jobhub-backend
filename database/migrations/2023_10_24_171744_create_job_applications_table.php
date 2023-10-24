@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('apply_forms', function (Blueprint $table) {
+        Schema::create('job_applications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->index();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->string("Full Name");
-            $table->string("Email");
-            $table->string("Resume/CV");
+            $table->string('Subject');
+            $table->string('Message');
+            $table->string('Contact');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('apply_forms');
+        Schema::dropIfExists('job_applications');
     }
 };
